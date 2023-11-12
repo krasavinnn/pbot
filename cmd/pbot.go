@@ -31,7 +31,7 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 
-		fmt.Println("kbot called", appVersion)
+		fmt.Println("pbot called", appVersion)
 
 		pbot, err := tele.NewBot(tele.Settings{
 			URL:    "",
@@ -45,11 +45,11 @@ to quickly create a Cobra application.`,
 		}
 		pbot.Handle(tele.OnText, func(m tele.Context) error {
 			log.Print(m.Message().Payload, m.Text())
-			payload :=m.Message().Payload
+			payload := m.Message().Payload
 
 			switch payload {
-				case "hello":
-					err = m.Send(fmt.Sprintf("Hello I'm Pbot %s!", appVersion))
+			case "hello":
+				err = m.Send(fmt.Sprintf("Hello I'm Pbot %s!", appVersion))
 			}
 			return err
 		})
