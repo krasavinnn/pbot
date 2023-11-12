@@ -20,7 +20,7 @@ var (
 
 // kbotCmd represents the kbot command
 var kbotCmd = &cobra.Command{
-	Use:     "kbot",
+	Use:     "pbot",
 	Aliases: []string{"start"},
 	Short:   "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
